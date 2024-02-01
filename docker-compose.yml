@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  user-database:
+    build:
+      context: .
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: postgres
+    volumes:
+      - user-db-vol:/var/lib/postgresql/data
+volumes:
+  user-db-vol:
